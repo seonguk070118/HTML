@@ -2,38 +2,73 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>선형 그러데이션</title>
+    <title>CSS 위치 속성</title>
     <style>
-    li{
-        display:inline-block;
+    *{
+        margin:0;
+        padding:0;
+    }
+    #contents{
+        background:url("./images/bg.jpg")no-repeat;
+        background-size:cover;
+        width:800px;
+        height:500px;
+        margin: 0 auto;
+        position:relative;
+    }
+    h1{
+        color:#fff;
+        font-size:120px;
+        text-shadow:2px 3px 0 #00f;
+        position:absolute;
+        right :10px;
+        bottom:10px;
+    }
+    p{
         width:300px;
-        height:200px;
-        border-radius:10px;
+        border-style:1px #ccc solid;
+        padding :10px
     }
-    .radial1{
-        width:200px;
-        height:200px;
-        border-radius:50%;
-        background:blue;
-        background:radial-gradient(circle at 20% 20%,white,blue);
+    b{
+        color:blue;
+        font-size:30px;
     }
-    .repeat1{
-        background:red;
-        background:repeating-linear-gradient(yellow,red 20px);
+    #pos1{
+        position:absolute;
+        left:50px;
+        top:50px;
     }
-    .repeat2{
-        background:#ccc;
-        background:repeating-radial-gradient(circle,white,#ccc 10%);
+    #pos2{
+        position:absolute;
+        right:100px;
+        top:50px;
+    }
+    #pos3{
+        position:absolute;
+        left:100px;
+        bottom:50px;
     }
     </style>
 </head>
 <body>
-    <h3>1.위치키워드를 사용한 원형 그러데이션 만들기</h3>
-    <div class="radial1"></div>
-    <h3>2.그러데이션 반복하기</h3>
-    <ul>
-        <li class="repeat1"></li>
-        <li class="repeat2"></li>
-    </ul>
+    <div id="contents">
+        <h1>CSS3</h1>
+    </div>
+        <p id="pos1"><b>pos1</b> et adipisicing voluptate aliqua cupidatat nulla.
+        Laboris est sint sit aliqua enim. Aute Lorem eu sint aute sunt proident.
+        Do culpa consectetur elit duis laboris reprehenderit incididunt nulla. 
+        Irure exercitation tempor aliqua laboris cupidatat anim in non officia
+        aliquip excepteur fugiat labore.</p>
+
+        <p id="pos2"><b>pos2</b>  Lorem ipsum reprehenderit adipisicing exercitation 
+        enim velit veniam incididunt sit consectetur elit exercitation. Commodo veniam
+        sit quis nisi ea. Ipsum do aliqua nostrud laboris elit duis adipisicing id Lorem qui.
+        Labore dolor ipsum enim incididunt. Velit qui cillum sunt labore incididunt duis aute
+        Lorem nulla et. Sint commodo aute amet laboris ullamco exercitation Lorem dolore ven
+        iam ut reprehenderit incididunt. Laborum nulla eiusmod cillum irure anim aute.</p>
+
+        <p id="pos3"><b>pos3</b>Excepteur voluptate ad irure ipsum duis. Deserunt
+        cupidatat commodo proident eu mollit cillum commodo quis quis et ad. Incididunt 
+        adipisicing enim laboris voluptate.</p>
 </body>
 </html>
