@@ -2,73 +2,96 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>CSS 위치 속성</title>
+    <title>웹페이지 레이아웃</title>
     <style>
-    *{
-        margin:0;
-        padding:0;
-    }
-    #contents{
-        background:url("./images/bg.jpg")no-repeat;
-        background-size:cover;
-        width:800px;
-        height:500px;
-        margin: 0 auto;
-        position:relative;
-    }
-    h1{
-        color:#fff;
-        font-size:120px;
-        text-shadow:2px 3px 0 #00f;
-        position:absolute;
-        right :10px;
-        bottom:10px;
-    }
-    p{
-        width:300px;
-        border-style:1px #ccc solid;
-        padding :10px
-    }
-    b{
-        color:blue;
-        font-size:30px;
-    }
-    #pos1{
-        position:absolute;
-        left:50px;
-        top:50px;
-    }
-    #pos2{
-        position:absolute;
-        right:100px;
-        top:50px;
-    }
-    #pos3{
-        position:absolute;
-        left:100px;
-        bottom:50px;
-    }
+        #container{
+            width:800px;
+            margin:0 auto;
+        }
+        ul{
+            list-style:none;
+        }
+        ul li {
+            float:left;
+        }
+        a{
+            display:block;
+            padding:10px 20px;
+            background-color:#ccc;
+        }
+        a:link,a:visited{
+            color:black;
+            text-decoration:none;
+        }
+        a:hover{
+            color:#fff;
+            background-color:blueviolet;
+        }
+        h2{
+            margin:10px;
+            clear:left;
+            padding:10px 20px;
+        }
+        p{
+            line-height:20px;
+            font-size:12px;
+        }
+        article{
+            float:left;
+            width:350px;
+            height:200px;
+            margin:10px;
+            padding:10px;
+            border:1px solid #ccc;
+        }
+        footer{
+            clear:left;
+            width:100%;
+            height:50px;
+            background-color:#222;
+        }
+        footer > p{
+            color:#fff;
+            font-size:0.9em;
+            text-align:center;
+            line-height:50px;
+        }
     </style>
 </head>
 <body>
-    <div id="contents">
-        <h1>CSS3</h1>
+    <div id="container">
+        <header>
+        <nav>
+            <ul>
+                <li><a href=#>메뉴1</a></li>
+                <li><a href=#>메뉴2</a></li>
+                <li><a href=#>메뉴3</a></li>
+                <li><a href=#>메뉴4</a></li>
+            </ul>
+        </nav>
+        </header>
+        <section>
+            <h2>강아지 용품 준비하기</h2>
+            <article>
+                <h3>강아지 집</h3>
+                <p>강아지가 편히 쉴 수 있는 포근한 집이 필요합니다. 강아지의 집은 강아지가 다 큰 후에도 계속 쓸 수 있는 집으로 구입하세요.집을 구입하실 때는 박음질이 잘 되어 있는지, 세탁이 간편한 제품인지 꼭 확인하시고 고르시는 것이 좋습니다.</p>
+            </article>
+            <article>
+                <h3>강아지 먹이</h3>
+                <p>강아지의 먹이는 꼭 어린 강아지용으로 나와있는 사료를 선택하세요. 강아지들은 사람에 비해 성장속도가 8배정도 빠르답니다. 따라서 강아지에게는 성장속도에 맞는 사료를 급여하셔야 합니다. 사람이 먹는 음식을 먹게 되면 양념과 향신료에 입맛이 익숙해지고, 비만이 될 가능성이 매우 높아집니다. 강아지용 사료는 생후 12개월까지 급여하셔야 합니다.</p>
+            </article>
+            <article>
+                <h3>밥그릇, 물병</h3>
+                <p>밥그릇은 쉽게 넘어지지 않도록 바닥이 넓은 것이 좋습니다.물병은 대롱이 달린 것으로 선택하세요. 밥그릇에 물을 주게 되면 입 주변에 털이 모두 젖기 때문에 비위생적이므로 대롱을 통해서 물을 먹을 수 있는 물병을 마련하시는 것이 좋습니다.</p>
+            </article>
+            <article>
+                <h3>이름표, 목줄</h3>
+                <p>강아지를 잃어버릴 염려가 있으니 산책할 무렵이 되면 이름표를 꼭 목에 걸어주도록 하세요. 그리고 방울이 달린 목걸이를 하고자 하실 때는 신중하셔야 합니다. 움직일 때마다 방울이 딸랑 거리면 신경이 예민한 강아지들에게는 좋지 않은 영향을 끼칠 수 있기 때문입니다.</p>
+            </article>
+        </section>
+        <footer>
+            <p>boxmodel 연습하기</p>
+        </footer>
     </div>
-        <p id="pos1"><b>pos1</b> et adipisicing voluptate aliqua cupidatat nulla.
-        Laboris est sint sit aliqua enim. Aute Lorem eu sint aute sunt proident.
-        Do culpa consectetur elit duis laboris reprehenderit incididunt nulla. 
-        Irure exercitation tempor aliqua laboris cupidatat anim in non officia
-        aliquip excepteur fugiat labore.</p>
-
-        <p id="pos2"><b>pos2</b>  Lorem ipsum reprehenderit adipisicing exercitation 
-        enim velit veniam incididunt sit consectetur elit exercitation. Commodo veniam
-        sit quis nisi ea. Ipsum do aliqua nostrud laboris elit duis adipisicing id Lorem qui.
-        Labore dolor ipsum enim incididunt. Velit qui cillum sunt labore incididunt duis aute
-        Lorem nulla et. Sint commodo aute amet laboris ullamco exercitation Lorem dolore ven
-        iam ut reprehenderit incididunt. Laborum nulla eiusmod cillum irure anim aute.</p>
-
-        <p id="pos3"><b>pos3</b>Excepteur voluptate ad irure ipsum duis. Deserunt
-        cupidatat commodo proident eu mollit cillum commodo quis quis et ad. Incididunt 
-        adipisicing enim laboris voluptate.</p>
 </body>
 </html>
