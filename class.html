@@ -4,114 +4,87 @@
     <meta charset="UTF-8" />
     <title>웹페이지 레이아웃</title>
     <style>
-    *{
-      margin:0;
-      padding:0;
+    .container{
+      width:960px;
+      margin: 0 auto;
     }
-    body{
-      background:#ccc;
-      padding:20px;
+    .navi{
+      width:906px;
+      height:60px;
+      padding-bottom:10px;
+      border-bottom:2px solid #ccc;
     }
-    #signup{
-      background:white;
-      border:1px solid black;
-      border-radius:5px;
-      padding:20px;
-      width:400px;
+    .navi ul{
+      list-style:none;
+      padding-top:10px;
+      padding-bottom:5px;
+    }
+    .navi li{
+      display:inline;
+      width:150px;
+      padding:10px;
+    }
+    .navi a:link,a:visited{
+      font-size:14px;
+      padding:10px;
+      text-decoration-line:none;
+    }
+    .navi a:hover,a:focus{
+      background-color:darkgray;
+      color:white;
+    }
+    .navi a:active{
+      background-color:red;
+    }
+    .contents{
       margin:30px auto;
+      width:400px;
+      padding:20px;
+      border:1px solid darkgray;
+      border-radius:5px;
     }
-    #signup legend{
-      line-height:30px;
-      list-style:none;
-      padding:5px 10px;
-      margin-bottom:10px;
+    #intro:target{
+      background-color:blue;
+      color:#fff;
     }
-    #signup fieldset{
-      border:1px solid #ccc;
-      margin-bottom:30px;
+    #room{
+      background-color:orange;
     }
-    #signup ul li{
-      line-height:30px;
-      list-style:none;
-      padding:5px 10px;
-      margin-bottom:2px;
+    #reservation{
+      background-color:beige;
     }
-    #signup button{
-      border:1px solid #222;
-      border-radius:20px;
-      display:block;
-      font-size:16px;
-      letter-spacing:1px;
-      margin:auto;
-      padding:7px 25px;
-    }
-    #signup label{
-      float:left;
-      font-size:13px;
-      width:110px;
-    }
-    #signup input:not([type=radio]){
-      border:1px solid #ccc;
-      border-radius:3px;
-      font-size:13px;
-      padding:5px;
-      width:200px;
-    }
-    #signup input[required]{
-      border:1px red solid;
-    }
-    #signup input[readonly]{
-      border:none;
-    }
-    #signup button:hover{
-      background-color:midnightblue;
+    li a[href="ps-2.html"]::after{
+      content:"NEW!!";
+      font-size:x-small;
+      padding:2px , 4px;
+      margin:0 10px;
+      background:red;
       color:white;
     }
     </style>
   </head>
   <body>
-    <form id="signup">
-      <fieldset>
-        <legend>로그인 정보</legend>
+    <div class="container">
+      <nav class="navi">
         <ul>
-          <li>
-            <label for="userid">아이디</label>
-            <input id="userid" name="userid" type="text" required autofocus>
-          </li>
-          <li>
-            <label for="pwd1">비밀번호</label>
-            <input id="pwd1" name="pwd1" type="password" required>
-          </li>
-          <li>
-            <label for="pw2">비밀번호 확인</label>
-            <input id="pwd2" name="pwd2" type="password" repuired>
-          </li>
-          <li>
-            <label for="level">회원 등급</label>
-            <input id="level" name="level" type="text" readonly value="준회원">
-          </li>
+          <li><a href="intro">이용 안내</a></li>
+          <li><a href="room">객실 소개</a></li>
+          <li><a href="reservation">예약 방법 및 요금</a></li>
+          <li><a href="ps-2.html">예약하기</a></li>
         </ul>
-      </fieldset>
-      <fieldset>
-        <legend>개인 정보</legend>
-        <ul>
-          <li>
-            <label for="fullname">이름</label>
-            <input id="fullname" name="fullname" type="text" placeholder="5자미만 공백없이" required>
-          </li>
-          <li>
-            <label for="email">메일 주소</label>
-            <input id="email" name="email" type="email" placeholder="abcd@domain.com" required autocomplete="off">
-          </li>
-          <li>
-            <label for="tel">연락처</label>
-            <input id="tel" name="tel" type="tel" autocomplete="off">
-          </li>
-        </ul>
-      </fieldset>
-      <fieldset>
-        <button type="submit">제출</button>
-      </fieldset>
-    </form>
+      </nav>
+      <div id="intro" class="contents">
+        <h2>이용 안내</h2>
+        <p>Excepteur do est eiusmod nulla et veniam. Labore officia officia ex aliqua exercitation aliqua laborum Lorem deserunt ut ullamco labore anim. Officia eu duis aliquip incididunt. Do laborum et consequat aliqua sint consectetur.</p>
+      </div>
+      <div id="roon" class="contents">
+        <h2>객실 소개</h2>
+        <p>Qui magna culpa minim reprehenderit magna in nisi ipsum. Ad cillum tempor minim fugiat est dolor. Cillum sit qui minim sint officia nostrud cillum cupidatat pariatur ipsum eiusmod velit labore. Sit in non fugiat minim sit.</p>
+      </div>
+      <div id="reservation" class="contents">
+        <h2>예약 방법 및 요금</h2>
+        <p>Fugiat aliquip mollit proident velit magna esse ea officia eu. Esse do aliqua proident culpa eiusmod duis minim deserunt eu reprehenderit ut tempor.</p>
+      </div>
+    </div>
   </body>
 </html>
