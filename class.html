@@ -4,86 +4,145 @@
     <meta charset="UTF-8" />
     <title>웹페이지 레이아웃</title>
     <style>
-    .container{
-      width:960px;
-      margin: 0 auto;
+      #container{
+        width:1200px;
+        height:200px;
+        margin:40px auto;
+        font-size:11px;
+      }
+      .origin{
+        width:100px;
+        height:100px;
+        border:1px solid black;
+        float:left;
+        margin:20px 40px;
+      }
+      .origin > div {
+        width:100px;
+        height:100px;
+        background-color:orange;
+      }
+      h2{
+        clear:left;
+      }
+    #movex:hover{
+      transform:translateX(50px);
     }
-    .navi{
-      width:906px;
-      height:60px;
-      padding-bottom:10px;
-      border-bottom:2px solid #ccc;
+    #movey:hover{
+      transform:translateY(20px);
     }
-    .navi ul{
-      list-style:none;
-      padding-top:10px;
-      padding-bottom:5px;
+    #movexy:hover{
+      transform:translate(10px,20px);
     }
-    .navi li{
-      display:inline;
-      width:150px;
-      padding:10px;
+    #scalex:hover{
+      transform:scaleX(2);
     }
-    .navi a:link,a:visited{
-      font-size:14px;
-      padding:10px;
-      text-decoration-line:none;
+    #scaley:hover{
+      transform:scaleY(1.5);
     }
-    .navi a:hover,a:focus{
-      background-color:darkgray;
-      color:white;
+    #scale:hover{
+      transform:scale(0.7);
     }
-    .navi a:active{
-      background-color:red;
+    #rotate1:hover{
+      transform:rotate(40deg);
     }
-    .contents{
-      margin:30px auto;
-      width:400px;
-      padding:20px;
-      border:1px solid darkgray;
-      border-radius:5px;
+    #rotate:hover{
+      transform:rotate(-40deg);
     }
-    #intro:target{
-      background-color:blue;
-      color:#fff;
+    #pers{
+      perspective:300px;
     }
-    #room{
-      background-color:orange;
+    .rotatex:hover{
+      transform:rotateX(50deg);
     }
-    #reservation{
-      background-color:beige;
+    .rotatey:hover{
+      transform:rotatey(50deg);
     }
-    li a[href="ps-2.html"]::after{
-      content:"NEW!!";
-      font-size:x-small;
-      padding:2px , 4px;
-      margin:0 10px;
-      background:red;
-      color:white;
+    .rotatez:hover{
+      transform:rotatez(50deg);
+    }
+    .rotatexyz:hover{
+      transform:rotate3d(2.5,1.2,-1.5,55deg);
+    }
+    .skewx:hover{
+      transform:skewx(20deg);
+    }
+    .skewy:hover{
+      transform:skewY(15deg);
+    }
+    .skewxy:hover{
+      transform:skew(-25deg,-15deg);
+    }
+    img{
+      width:100px;
+      height:100px;
+      object-fit:cover;
     }
     </style>
   </head>
   <body>
-    <div class="container">
-      <nav class="navi">
-        <ul>
-          <li><a href="intro">이용 안내</a></li>
-          <li><a href="room">객실 소개</a></li>
-          <li><a href="reservation">예약 방법 및 요금</a></li>
-          <li><a href="ps-2.html">예약하기</a></li>
-        </ul>
-      </nav>
-      <div id="intro" class="contents">
-        <h2>이용 안내</h2>
-        <p>Excepteur do est eiusmod nulla et veniam. Labore officia officia ex aliqua exercitation aliqua laborum Lorem deserunt ut ullamco labore anim. Officia eu duis aliquip incididunt. Do laborum et consequat aliqua sint consectetur.</p>
+    <div id="container">
+      <h2>transform: 변형함수(translate : 이동, scale:크기,rotate :회전,perspective :원근감)</h2>
+      <div class="origin">
+        <div id="movex">translateX(50px)</div>
       </div>
-      <div id="roon" class="contents">
-        <h2>객실 소개</h2>
-        <p>Qui magna culpa minim reprehenderit magna in nisi ipsum. Ad cillum tempor minim fugiat est dolor. Cillum sit qui minim sint officia nostrud cillum cupidatat pariatur ipsum eiusmod velit labore. Sit in non fugiat minim sit.</p>
+      <div class="origin">
+        <div id="movey">translateY(20px)</div>
       </div>
-      <div id="reservation" class="contents">
-        <h2>예약 방법 및 요금</h2>
-        <p>Fugiat aliquip mollit proident velit magna esse ea officia eu. Esse do aliqua proident culpa eiusmod duis minim deserunt eu reprehenderit ut tempor.</p>
+      <div class="origin">
+        <div id="movexy">translate(10px, 20px)</div>
+      </div>
+      <div class="origin">
+        <div id="scalex">scaleX(2)</div>
+      </div>
+      <div class="origin">
+        <div id="movey">scaleY(1.5)</div>
+      </div>
+      <div class="origin">
+        <div id="scale">scale(0.7)</div>
+      </div>
+      <div class="origin", id="rotate1">rotate(40deg)
+        <img src="images/tree.jpg">
+      </div>
+      <div class="origin", id="rotate">rotate(-40deg)
+        <img src="images/tree.jpg">
+      </div>
+      <div class="origin", id="perspective">
+        <div class="rotatex">perspective x
+          <img src="images/sunset.jpg" alt="">
+        </div>
+      </div>
+      <div class="origin", id="perspective">
+        <div class="rotatey">perspective y
+          <img src="images/sunset.jpg" alt="">
+        </div>
+      </div>
+      <div class="origin", id="perspective">
+        <div class="rotatez">perspective z
+          <img src="images/sunset.jpg" alt="">
+        </div>
+      </div>
+      <div class="origin", id="perspective">
+        <div class="rotatexyz">perspective xyz
+          <img src="images/sunset.jpg" alt="">
+        </div>
+      </div>
+      <br>
+      <h2>transform: 변형함수(skew : 비틀기)</h2>
+      <div class="origin">
+        <div class="skewx">skewx
+          <img src="images/tree.jpg" alt="">
+        </div>
+      </div>
+      <div class="origin">
+        <div class="skewy">skewy
+          <img src="images/tree.jpg" alt="">
+        </div>
+      </div>
+      <div class="origin">
+        <div class="skewxy">skewxy
+          <img src="images/tree.jpg" alt="">
+        </div>
       </div>
     </div>
   </body>
