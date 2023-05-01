@@ -5,78 +5,96 @@
     <title>프랜지션과 애니메이션</title>
     <style>
     #container{
-      width:1000px;
-      margin: 20px auto;
+      width:500px;
+      margin:20px auto;
     }
-    h1{
-      text-align: center;
-    }
-    ul{
-      list-style:none;
-      padding:0;
-    }
-    li{
+    .box{
+      width:100px;
+      height:100px;
       float:left;
-      padding:0;
-      margin:10px;
-      overflow:hidden;
-      position:relative;
+      margin:50px;
+    }
+    #box1{
+      background-color:lawngreen;
+      border:1px solid transparent;
+    }
+    #box1:hover, #box1:active{
+      animation-name:shape;
+      animation-duration:3s;
+      animation-iteration-count:2;
+    }
+    @keyframes shape{
+      from{
+        border:1px solid transparent;
+      }
+      to{
+        border:1px solid black;
+        border-radius:50%;
+      }
+    }
+    #box2{
+      background-color:orchid;
+      border:1px solid transparent;
+      animation-name:rotate1;
+      animation-duration:3s;
+      animation-iteration-count:infinite;
+      animation-delay:3s;
+    }
+    @keyframes rotate1{
+      from{
+        transform:rotate(0deg);
+      }
+      to{
+        transform:rotateY(45deg);
+      }
+    }
+    .box3{
+      width:200px;
+      height:150px;
+      margin:100px auto;
+
+      animation:
+        rotate2 1.5s infinite,
+        background 1.5s infinite alternate;
+    }
+    @keyframes rotate2{
+      from{
+        transform:perspective(120px) rotateX(0deg) rotateY(0deg);}
+        50% {transform:perspective(120px) rotateX(-180deg) rotateY(0deg);}
+        to {transform:perspective(120px) rotateX(-180deg) rotateY(-180deg);
+      }
+    }
+    @keyframes background{
+      from{background-color:red;}
+      50%{background-color:green;}
+      to{background-color:blue;}
+    }
+    #bear-box{
+      width:200px;
+      margin:30px auto;
     }
     img{
-      float:left;
-      margin:0;
-      padding:0;
-      z-index:5;
+      border:1px solid #ccc;
+      border-radius:50%;
+      box-shadow:5px 5px 30px 2px #000;
+      animation:rotateBear 2.5s infinite 9s;
     }
-    .caption{
-      position:absolute;
-      top:200px;
-      width:300px;
-      height:200px;
-      padding-top:20px;
-      background:rgba(0,0,0,0.6);
-      opacity:0;
-      transition:all 0.6s ease-in-out;
-      z-index:10;
-    }
-    li:hover .caption{
-      opacity:1;
-      transform:translateY(-200px);
-    }
-    .caption h2, .caption p {
-      color:white;
-      text-align:center;
+    @keyframes rotateBear{
+      from{transform:perspective(200px) rotateY(0deg);}
+      50%{transform:perspective(200px) rotateY(-180deg);}
+      to{transform:perspective(200px) rotateY(-360deg);}
     }
     </style>
   </head>
   <body>
     <div id="container">
-      <ul>
-        <li>
-          <img src="images/prod1.jpg" alt="">
-          <div class="caption">
-            <h2>상품1</h2>
-            <p>상품 1 설명 텍스트</p>
-            <p>가격 : 12,345원</p>
-          </div>
-        </li>
-        <li>
-          <img src="images/prod2.jpg" alt="">
-          <div class="caption">
-            <h2>상품2</h2>
-            <p>상품 2 설명 텍스트</p>
-            <p>가격 : 12,345원</p>
-          </div>
-        </li>
-        <li>
-          <img src="images/prod3.jpg" alt="">
-          <div class="caption">
-            <h2>상품3</h2>
-            <p>상품 3 설명 텍스트</p>
-            <p>가격 : 12,345원</p>
-          </div>
-        </li>
-      </ul>
+      <div class="box" id="box1">1.테두리 변환</div>
+      <div class="box" id="box2">2.회전애니메이션</div>
+      <h4 style="clear:left">3.x축 y축 회전 및 배경색 변환</h4>
+      <div class="box3"></div>
+    </div>
+    <div id="bear-box">4.이미지 회전
+      <img src="images/bear.jpg">
     </div>
   </body>
 </html>
